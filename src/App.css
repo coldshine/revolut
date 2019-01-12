@@ -31,8 +31,15 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+html,
+body,
+#root,
+#root > div{
+  height: 100%;
+}
+
 .app {
-  height: 100vh;
+  height: 100%;
   color: #fff;
 }
 
