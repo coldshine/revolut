@@ -18,6 +18,7 @@ class ExchangeCurrencyItem extends React.Component {
     amount = Math.abs(amount);
     amount = Math.max(0, amount);
     amount = Math.min(amount, this.props.availableAmount);
+    console.log(amount);
     return amount;
   }
 
@@ -37,7 +38,7 @@ class ExchangeCurrencyItem extends React.Component {
     if (!this.props.exchangeAmount || this.props.exchangeAmount <= 0) {
       return '';
     }
-    return '+' + (this.props.exchangeAmount * this.props.exchangeRate).toFixed(2);
+    return '+' + (this.props.exchangeAmount * this.props.exchangeRate).toFixed(2).replace('.', ',');
   }
 
   focusOnInput() {
@@ -58,7 +59,7 @@ class ExchangeCurrencyItem extends React.Component {
 
     let valueOutput;
     if (this.props.hasInput) {
-      valueOutput = <input ref={this.textInputRef} className={styles.input} type="text" pattern="\d*" value={this.getExchangeAmount()} onChange={this.handleChange} maxLength={6} />;
+      valueOutput = <input ref={this.textInputRef} className={styles.input} type="number" value={this.getExchangeAmount()} onChange={this.handleChange} maxLength={6} />;
     } else {
       valueOutput = <div className={styles.result}>{this.getExchangeResult()}</div>;
     }

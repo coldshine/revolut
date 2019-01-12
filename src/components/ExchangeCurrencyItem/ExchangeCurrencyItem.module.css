@@ -1,26 +1,45 @@
 @import "../../AppVariables.css";
 
 .layout {
-    height: 100%;
-    padding: 5vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  height: 100%;
+  padding: 5vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
+
 .layoutInner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .input {
-    color: #fff;
-    text-align: right;
-    width: 33.5vw;
-    font-size: var(--huge-text-size);
+  color: #fff;
+  text-align: right;
+  width: 33.5vw;
+  font-size: var(--huge-text-size-desktop);
 }
+@media (max-width: 720px) {
+  .input {
+    font-size: var(--huge-text-size-mobile);
+  }
+}
+
 .result {
-    font-size: var(--huge-text-size);
+  font-size: var(--huge-text-size-desktop);
 }
+@media (max-width: 720px) {
+  .result {
+    font-size: var(--huge-text-size-mobile);
+  }
+}
+
 .currencyCode {
-    font-size: var(--huge-text-size);
+  font-size: var(--huge-text-size-desktop);
+}
+@media (max-width: 720px) {
+  .currencyCode {
+    font-size: var(--huge-text-size-mobile);
+  }
 }

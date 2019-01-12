@@ -3,57 +3,65 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-    font-size: var(--regular-text-size);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--regular-text-size-desktop);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 720px) {
+  body  {
+    font-size: var(--regular-text-size-mobile);
+  }
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 .app {
-    height: 100vh;
-    color: #fff;
+  height: 100vh;
+  color: #fff;
 }
 
-input[type="text"] {
-    background: none;
-    border: none;
-    outline: none;
+input[type="number"] {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-family);
 }
 
 .screen {
-    height: 100%;
+  height: 100%;
 }
 
 .screen--exchange .slick-slider {
-    height: 100%;
+  height: 100%;
 }
+
 .screen--exchange .slick-list,
 .screen--exchange .slick-track,
 .screen--exchange .slick-slide > div {
-    height: 100%;
+  height: 100%;
 }
+
 .screen--exchange .slick-dots {
-   bottom: 25px;
+  bottom: 25px;
 }
+
 .screen--exchange .slick-dots li button:before {
-    color: #fff;
-    font-size: 10px;
+  color: #fff;
+  font-size: 10px;
 }

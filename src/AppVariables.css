@@ -1,6 +1,11 @@
 :root {
-    --light-blue: #00b6ff;
-    --dark-blue: #004eff;
-    --regular-text-size: 2vw;
-    --huge-text-size: 10vw;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  --light-blue: #00b6ff;
+  --dark-blue: #004eff;
+  --regular-text-size-desktop: 2vw;
+  --regular-text-size-mobile: 4vw;
+  --huge-text-size-desktop: 10vw;
+  --huge-text-size-mobile: 15vw;
 }
