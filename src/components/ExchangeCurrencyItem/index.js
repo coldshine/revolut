@@ -18,7 +18,6 @@ class ExchangeCurrencyItem extends React.Component {
     amount = Math.abs(amount);
     amount = Math.max(0, amount);
     amount = Math.min(amount, this.props.availableAmount);
-    console.log(amount);
     return amount;
   }
 
