@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import reducers from './reducers';
+import { createLogger } from 'redux-logger';
+import DevTools from './components/DevTools';
+import ExchangeCurrency from './components/ExchangeCurrency';
+import CurrencyProvider from './providers/CurrencyProvider';
+import CurrencyMiddleware from './middlewares/CurrencyMiddleware';
+
 import './App.css';
+
+const initialState = {};
+let enhance;
+if (true) {
+  const logger = createLogger({
+    predicate: (getState, action) => action.type !== 'EFFECT_TRIGGERED' && action.type !== 'EFFECT_RESOLVED'
+  });
+  enhance = compose(applyMiddleware(CurrencyMiddleware, logger), DevTools.instrument());
+} else {
+  enhance = applyMiddleware(CurrencyMiddleware);
+}
+const store = createStore(reducers, initialState, enhance);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={store}>
+        <CurrencyProvider>
+          <div className="app">
+            <ExchangeCurrency />
+          </div>
+        </CurrencyProvider>
+        <DevTools />
+      </Provider>
     );
   }
 }

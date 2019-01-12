@@ -1,0 +1,23 @@
+.exchangeCurrencyItem {
+    outline: none !important;
+    height: 100%;
+}
+.exchange {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.exchangeFrom {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  background-color: var(--light-blue);
+}
+.exchangeTo{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  background-color: var(--dark-blue);
+}

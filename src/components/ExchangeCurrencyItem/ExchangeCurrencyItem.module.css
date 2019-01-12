@@ -1,0 +1,26 @@
+@import "../../AppVariables.css";
+
+.layout {
+    height: 100%;
+    padding: 5vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.layoutInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input {
+    color: #fff;
+    text-align: right;
+    width: 33.5vw;
+    font-size: var(--huge-text-size);
+}
+.result {
+    font-size: var(--huge-text-size);
+}
+.currencyCode {
+    font-size: var(--huge-text-size);
+}
