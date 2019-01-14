@@ -7,7 +7,7 @@ export default class {
         reject('no base currency was provided');
       });
     }
-    const APP_ID = '000ef6df0ced4be1bbb6e464f5c809cc';
+    const APP_ID = '95aa13885c9a4815a43fce01c8f392dd';
 
     return axios.get('https://openexchangerates.org/api/latest.json', {
       params: {
