@@ -27,7 +27,10 @@ class ExchangeCurrencyItem extends React.Component {
   }
 
   getExchangeAmount() {
-    if (!this.props.exchangeAmount.replace('-', '')) {
+    if (!this.props.exchangeAmount) {
+      return '';
+    }
+    if (this.props.exchangeAmount === '-') {
       return '';
     }
     return '-' + this.normalizeExchangeAmount(this.props.exchangeAmount);
