@@ -22,15 +22,15 @@ class ExchangeCurrencyItem extends React.Component {
   }
 
   handleChange(event) {
+    if (!event.target.value) {
+      event.target.value = '';
+    }
     const exchangeAmount = this.normalizeExchangeAmount(event.target.value);
     this.props.dispatch(changeExchangeAmount(exchangeAmount));
   }
 
   getExchangeAmount() {
     if (!this.props.exchangeAmount) {
-      return '';
-    }
-    if (this.props.exchangeAmount === '-') {
       return '';
     }
     return '-' + this.normalizeExchangeAmount(this.props.exchangeAmount);
